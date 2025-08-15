@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+    name: myaspnetapi-Deployment
+spec: 
+  replicas: 2
+  selector:
+      matchLabels:
+        app: myaspnetapi
+  template: 
+      metadata:
+        labels:
+           app: myaspnetapi
+      spec: 
+        containers:
+          - name: myaspnetapi
+            image: poonam.jaiswal333@gmail.com/myaspnetapi:latest
+            ports: 
+            - containerPort: 80                  
